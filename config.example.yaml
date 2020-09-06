@@ -1,0 +1,6 @@
+# Host, could be fqdn or IP
+host: "http://pdu.local"
+#Username to login with
+user: "admin"
+#Corresponding password
+passwd: "admin"
