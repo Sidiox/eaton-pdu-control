@@ -160,9 +160,11 @@ class Eaton():
 {outlets_str}
 </SET_OBJECT>
 """
-        # print(data)
+
         res = requests.post(uri,data= data)
 
+        if res.content.decode() != '<?xml version="1.0" encoding="UTF-8"?>\r\n<SET_OBJECT result="OK"/>\r\n':
+            raise Exception(f"Outlet control failed:\n{res.content}")
 
 
 
