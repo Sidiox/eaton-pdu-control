@@ -20,3 +20,7 @@ For the authentication subsystem, the `shark.js` library from Eaton is reverse e
 Most functions have been replaced by Python equivalents, implemented in `response_gen.py`
 Only the MD5 hash function hasn't been reverse engineered (yet) as it doesn't give the same
 results as Pythons hashlib md5.
+
+## Testing the response generation
+The response generation is fully tested with `unittest` and `coverage`:  
+`coverage run -m unittest -v`
