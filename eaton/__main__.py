@@ -62,18 +62,12 @@ def control_device(eaton: Type[Eaton], device : str, action: str, delay=0):
     outlet_names = [eaton.get_outlet_by_index(x) for x in outlets_indices]
     outlet_names = [x[0] for x in outlet_names]
 
-    print(outlet_names)
     print(f"Turning {action} {device} via {outlet_names} with delay {delay}")
 
-    eaton.control_outlets(outlet_names)
+    eaton.control_outlets(outlet_names, action=action.upper(), delay=delay)
 
 
 if __name__ == "__main__":
-    # session_id = authenticate()
-
-    # get_overview("asdf")
-
-    # get_overview(session_id)
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", "-c", required=False,
